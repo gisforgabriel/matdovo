@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matdovo</title>
+    <script src="https://get.mavo.io/mavo.min.js"></script>
+    <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body mv-app="matdovo" mv-storage="local" mv-mode="edit" mv-autosave class="container deep-purple lighten-5">
+    <nav>
+        <div class="nav-wrapper mv-bar">
+            <a href="#" class="brand-logo">Matdovo</a>
+        </div>
+    </nav>
+    <header class="row valign-wrapper">
+        <h1>My tasks</h1><span class="new badge" data-badge-caption="% complete">[count(done)/count(task)*100]</span><button type="button" class="mv-save btn right-align">Save</button>
+    </header>
+    <div class="row">
+        <div class="card col s4" property="board" mv-multiple >
+            <h2 class="card-title" property="boardTitle">Board 1</h2>
+            <ul class="card-content">
+                <li property="task" mv-multiple>
+                    <label>
+                        <input property="done" type="checkbox" class="browser-default"/>
+                        <span property="taskTitle">Do stuff</span>
+                    </label>
+                </li>
+                <div class="card-action">
+                    <button type="button" class="btn-small mv-add mv-add-task"><i class="material-icons">add</i>Add</button>
+                    <button type="button" class="btn-small clear-completed" mv-action="delete(task where done)"><i class="material-icons">archive</i>Clear Completed</button>
+                </div>
+            </ul>
+            <button type="button" class="btn-small mv-add mv-add-board"><i class="material-icons">playlist_add</i>Add</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</body>
+</html>
